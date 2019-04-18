@@ -11,7 +11,7 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" v-for=" (image, idx) in event.images" :class="{active: idx==0}">
-          <img img v-bind:src="event.images" class="d-block w-100" alt="https://images.craigslist.org/00A0A_czxG7vN9mIz_1200x900.jpg">
+          <img v-bind:src="image.url" class="d-block width: 100px, img-align: center" alt="...">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
