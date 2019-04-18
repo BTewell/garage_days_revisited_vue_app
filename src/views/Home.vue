@@ -3,12 +3,27 @@
     <h1>{{ message }}</h1>
     <div v-for="event in events">
       <h2>{{ event.title }}</h2>
-      <img v-bind:src="event.images">
       <p>{{event.details}}</p>
       <p>{{event.address}}</p>
       <p>{{event.start_date}}</p>
       <p>{{event.end_date}}</p>
       <p>{{event.start_time}} - {{event.end_time}}</p>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" v-for=" (image, idx) in event.images" :class="{active: idx==0}">
+          <img img v-bind:src="event.images" class="d-block w-100" alt="https://images.craigslist.org/00A0A_czxG7vN9mIz_1200x900.jpg">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+      <!-- <img v-bind:src="event.images"> -->
 
     </div>
   </div>
