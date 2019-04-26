@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    Garage Days Revisited
+    <h1>Garage Days Revisited</h1>
     <div v-for="error in errors">
       {{ error }}
     </div>

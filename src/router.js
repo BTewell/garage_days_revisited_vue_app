@@ -6,6 +6,7 @@ import Signup from './views/Signup.vue';
 import Logout from './views/Logout.vue';
 import EventsNew from './views/EventsNew.vue';
 import EventsShow from './views/EventsShow.vue';
+import EventsEdit from './views/EventsEdit.vue';
 Vue.use(Router);
 
 export default new Router({
@@ -13,14 +14,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: Home
+      path: '/events/:id/edit',
+      name: 'events-edit',
+      component: EventsEdit
     },
     {
       path: '/events/new',
@@ -31,6 +27,16 @@ export default new Router({
       path: '/events/:id',
       name: 'events-show',
       component: EventsShow
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     {
       path: '/signup',

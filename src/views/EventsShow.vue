@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    Garage Days Revisited
+    <h1>Garage Days Revisited</h1>
     <p>{{event.details}}</p>
     <p>{{event.start_date}}</p>
     <p>{{event.end_date}}</p>
@@ -24,7 +24,7 @@
       <h2>{{ item.name }}</h2>
     </div> -->
     <div v-if="currentUser === event.user_id">
-    <button v-bind:to="'/events/' + event.id + '/edit'">Edit Event</button>
+    <router-link v-bind:to="'/events/' + event.id + '/edit'" tag="button">Edit Event</router-link>
     </div>
   </div>
 </template>

@@ -2,7 +2,8 @@
   <div class="signup">
     <div class="container">
       <form v-on:submit.prevent="submit()">
-        <h1>Sign-up</h1>
+        <h1>Garage Days Revisited</h1>
+        <h2>Sign-up</h2>
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
         </ul>
