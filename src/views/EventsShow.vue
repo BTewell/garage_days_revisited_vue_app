@@ -1,6 +1,8 @@
 <template>
   <div class="root">
     <h1>Garage Days Revisited</h1>
+    <h3>{{event.title}}</h3>
+    <p>{{event.address}}</p>
     <p>{{event.details}}</p>
     <p>{{event.start_date}}</p>
     <p>{{event.end_date}}</p>
