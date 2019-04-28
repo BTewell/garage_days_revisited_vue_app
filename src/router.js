@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
+import EventItems from './views/EventItems.vue';
 import User from './views/User.vue';
 import UserEdit from './views/UserEdit.vue';
 import Signup from './views/Signup.vue';
@@ -39,6 +40,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/events/:id/item',
+      name: 'events-items',
+      component: EventItems
     },
     {
       path: '/signup',
