@@ -6,6 +6,7 @@
     <p>First Name: {{user.first_name}}</p>
     <p>Last Name: {{user.last_name}}</p>
     <p>Email Address: {{user.email_address}}</p>
+  <router-link v-bind:to="'/user/:id/edit'" tag="button">Edit Profile</router-link>   
   </div>
 </template>
 <style>
@@ -25,6 +26,7 @@ export default {
         first_name: "",
         last_name: "",
         email_address: "",
+        user_id: ""
       }
     };
   },

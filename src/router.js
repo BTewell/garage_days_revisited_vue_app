@@ -2,7 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from './views/Login.vue';
 import Home from './views/Home.vue';
-import Profile from './views/Profile.vue';
+import User from './views/User.vue';
+import UserEdit from './views/UserEdit.vue';
 import Signup from './views/Signup.vue';
 import Logout from './views/Logout.vue';
 import EventsNew from './views/EventsNew.vue';
@@ -50,9 +51,14 @@ export default new Router({
       component: Logout
     },    
     {
-      path: '/profile',
-      name: 'profile',
-      component: Profile
-    }
+      path: '/user',
+      name: 'user',
+      component: User
+    },
+    {
+      path: '/user/:id/edit',
+      name: 'user-edit',
+      component: UserEdit
+    },
   ]
 });
