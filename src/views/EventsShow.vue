@@ -13,7 +13,7 @@
     <router-link v-bind:to="'/events/' + event.id + '/item'" tag="button">Hot Deals</router-link>
     <hr>
     <div v-if="currentUser === event.user_id">
-    <router-link v-bind:to="'/events/' + event.id + '/edit'" tag="button">Edit Event</router-link>
+    <router-link v-bind:to="'/events/' + event.id + '/edit'" tag="button">Edit Event</router-link><router-link v-bind:to="'/events/'+ event.id +'/item/new'" tag="button">Add Item</router-link>
     </div>
   </div>
 </template>
