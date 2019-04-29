@@ -10,12 +10,12 @@
           <p><img img v-bind:src="image.url" class="d-block w-50" alt=""></p>        
         </div>
       </div>
+      <div v-if="currentUser === event.user_id">
+        <router-link v-bind:to="'item/image/new'" tag="button">Add Image</router-link>
+      </div>
     </div>
 <!--     <router-link v-bind:to="'/items/show' + event.item.id" tag="button">Item Details</router-link> -->
     <hr>
-    <!-- <div v-if="currentUser === item.user_id">
-      <router-link v-bind:to="'/items/show' + item.id">Add Item</router-link>
-    </div> -->
   </div>
 </template>
 
@@ -32,7 +32,8 @@ export default {
     return {
       event: {
         items: "",
-        images: ""
+        images: "",
+        user_id: ""
       },
       currentUser: ""
     };

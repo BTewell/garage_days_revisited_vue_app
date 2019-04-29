@@ -4,6 +4,7 @@ import Login from './views/Login.vue';
 import Home from './views/Home.vue';
 import EventItems from './views/EventItems.vue';
 import EventItemsNew from './views/EventItemsNew.vue';
+import ItemImageNew from './views/ItemImageNew.vue';
 import User from './views/User.vue';
 import UserEdit from './views/UserEdit.vue';
 import Signup from './views/Signup.vue';
@@ -51,6 +52,11 @@ export default new Router({
       path: '/events/:id/item/new',
       name: 'events-items-new',
       component: EventItemsNew
+    },
+    {
+      path: '/events/:id/item/image/new',
+      name: 'image-new',
+      component: ItemImageNew
     },
     {
       path: '/signup',
