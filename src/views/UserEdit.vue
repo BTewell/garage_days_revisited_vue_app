@@ -1,11 +1,48 @@
 <template>
   <div class="root">
-    <h1>Garage Days Revisited</h1>
-    <div v-for="error in errors">
-      {{ error }}
-    </div>
+    <div class="profile">
+      <section style="background: url('/img/listing-hero-bg.jpg') no-repeat;" class="hero listing-single-hero d-flex align-items-end">
+        <div class="container">
+          <div class="content d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-end">
+            <div class="heading-info">
+              <h1 class="text-primary">Garage Days Revisitors</h1>
+              <div class="listing-rate d-flex align-items-center">
+                <ul class="rate list-inline">
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>    
+      <aside class="col-lg-4">                   
+        <div class="widget opening-hours">
+          <header>
+            <h3 class="has-lines"><small> Profile </small> Current User </h3>
+          </header>
+          <div v-for="error in errors">
+            {{ error }}
+          </div>
+          <form class="days" v-on:submit.prevent="updateUser()">
+            <div class="day d-flex justify-content-between"><strong>User Name:</strong><input type="text" v-model="user.user_name"></div>
+            <div class="day d-flex justify-content-between"><strong>First Name:</strong><input type="text" v-model="user.first_name"></div>
+            <div class="day d-flex justify-content-between"><strong>Last Name:</strong><input type="text" v-model="user.last_name"></div>
+            <div class="day d-flex justify-content-between"><strong>Email Address:</strong><input type="text" v-model="user.email_address"></div>
+            <div class="day d-flex justify-content-between"><strong>Password:</strong><input type="text" v-model="user.password"></div>
+            <div class="day d-flex justify-content-between"><strong>Email Address</strong><input type="text" v-model="user.password_confirmation"></div>
+            <input type="submit" class="btn btn-primary has-shadow has-wide-padding" value="Update User">
+          </form>
+        <hr>
+        <button class="btn btn-primary has-shadow has-wide-padding" v-on:click="deleteUser()">Delete User</button>
+        </div>
+      </aside><!-- <h1>Garage Days Revisited</h1> -->
+    </div>    <!-- <h1>Garage Days Revisited</h1> -->
 
-    <form v-on:submit.prevent="updateUser()">
+    <!-- <form v-on:submit.prevent="updateUser()">
       <p>User Name: <input type="text" v-model="user.user_name"></p>
       <p>First Name: <input type="text" v-model="user.first_name"></p>
       <p>Last Name: <input type="text" v-model="user.last_name"></p>
@@ -13,10 +50,7 @@
       <p>Password: <input type="text" v-model="user.password"></p>
       <p>Password Confirmation: <input type="text" v-model="user.password_confirmation"></p>
       <input type="submit" value="Update User">
-      <!-- <button>Make a new user</button> -->
-    </form>
-    <hr>
-    <button v-on:click="deleteUser()">Delete User</button>
+    </form> -->
   </div>
 </template>
 

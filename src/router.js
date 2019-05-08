@@ -44,17 +44,17 @@ export default new Router({
       component: Home
     },
     {
-      path: '/events/:id/item',
+      path: '/events/:id/items',
       name: 'events-items',
       component: EventItems
     },
     {
-      path: '/events/:id/item/new',
+      path: '/events/:id/items/new',
       name: 'events-items-new',
       component: EventItemsNew
     },
     {
-      path: '/events/:id/item/image/new',
+      path: '/events/:id/items/:itemId/image/new',
       name: 'image-new',
       component: ItemImageNew
     },

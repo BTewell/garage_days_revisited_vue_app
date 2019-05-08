@@ -1,7 +1,38 @@
 <template>
   <div class="root">
-    <h1>Garage Days Revisited</h1>
-    <div v-for="error in errors">
+    <section style="background: url('/img/GDR-faces-cups.jpg')no-repeat" class="hero listing-single-hero d-flex align-items-center">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item active">Event</li>
+        </ul>
+        <h1 class="has-lines">Edit <span class="text-primary"> Event</span></h1>    
+      </div>
+    </section>
+    <aside class="col-lg-6">                   
+      <div class="widget opening-hours">
+        <header>
+          <h3 class="has-lines"><small> Events </small> Edit Event </h3>
+        </header>      
+        <div v-for="error in errors">
+          {{ error }}
+        </div>
+        <form class="days" v-on:submit.prevent="updateEvent()">
+          <div class="day d-flex justify-content-between"><strong>Event Title:</strong><input type="text" v-model="event.title"></div>
+          <div class="day d-flex justify-content-between"><strong>Event Address:</strong><input type="text" v-model="event.address"></div>
+          <div class="day d-flex justify-content-between"><strong>Event Details:</strong><input type="text" v-model="event.details"></div>
+          <div class="day d-flex justify-content-between"><strong>Event Start Date:</strong><input type="text" v-model="event.start_date"></div>
+          <div class="day d-flex justify-content-between"><strong>Event End Date:</strong><input type="text" v-model="event.end_date"></div>
+          <div class="day d-flex justify-content-between"><strong>Event Start Time:</strong><input type="text" v-model="event.start_time"></div>
+          <div class="day d-flex justify-content-between"><strong>Event End Time:</strong><input type="text" v-model="event.end_time"></div>
+          <input type="submit" class="btn btn-primary mt-3 mt-lg-0 ml-lg-3 has-wide-padding" value="Update event">
+          <!-- <button>Make a new recipe</button> -->
+        </form>
+        <hr>
+        <button class="btn btn-outline-primary mt-3 mt-lg-0 ml-lg-3 has-wide-padding" v-on:click="deleteEvent()">Delete event</button>
+      </div>
+    </aside>
+    <!-- <div v-for="error in errors">
       {{ error }}
     </div>
 
@@ -14,10 +45,10 @@
       <p>Start Time: <input type="text" v-model="event.start_time"></p>
       <p>End Time: <input type="text" v-model="event.end_time"></p>
       <input type="submit" value="Update event">
-      <!-- <button>Make a new event</button> -->
+      <button>Make a new event</button>
     </form>
     <hr>
-    <button v-on:click="deleteEvent()">Delete event</button>
+    <button class="btn navbar-btn btn-outline-primary mt-3 mt-lg-0 ml-lg-3" v-on:click="deleteEvent()">Delete event</button> -->
   </div>
 </template>
 

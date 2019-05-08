@@ -1,21 +1,41 @@
 <template>
   <div class="root">
-    <h1>Garage Days Revisited</h1>
-    <div v-for="item in event.items">
-      <h2>{{ item.name }}</h2>
-      <p>{{ item.description }}</p>
-      <p>{{ item.price }}</p>
-      <div v-for="image in event.images">
-        <div v-if="image.item_id === item.id">
-          <p><img img v-bind:src="image.url" class="d-block w-50" alt=""></p>        
-        </div>
+    <section style="background: url('/img/blog-home-2.jpg') no-repeat;" class="hero">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item active">Hot Deals</li>
+        </ul>
+        <h1 class="has-lines">Hot <span class="text-primary"> Deals</span></h1>
       </div>
-      <div v-if="currentUser === event.user_id">
-        <router-link v-bind:to="'item/image/new'" tag="button">Add Image</router-link>
+    </section>
+    <section class="top-listings">
+      <div class="container">
+        <!-- <header> -->
+          <h2 class="has-lines"><small>Hot Deals</small> Check out these <span class="text-primary">amazing items</span> that are too good to miss!</h2>
+        <!-- </header> -->
+      </div>
+    </section>
+      <div class="container">
+        <div v-for="item in event.items">
+          <div class="has-lines">
+            <h2>{{ item.name }}</h2>
+            <h4 class="text-primary">Description:</h4><p>{{ item.description }}</p>
+            <h4 class="text-primary">Price:</h4><p>{{ item.price }}</p>
+          </div>
+            <div v-for="image in event.images">
+              <div v-if="image.item_id === item.id">
+                <p><img img v-bind:src="image.url" class="d-block w-50" alt=""></p>
+              </div>
+            </div>
+          <div v-if="currentUser === event.user_id">
+            <ul class="nav nav-pills-template">
+              <li class="nav-item"><router-link v-bind:to="'/events/' + event.id + '/items/' + item.id + '/image/new'" class="nav-link active">Add Image</router-link></li>
+            </ul>
+          </div>
+          <hr>
       </div>
     </div>
-<!--     <router-link v-bind:to="'/items/show' + event.item.id" tag="button">Item Details</router-link> -->
-    <hr>
   </div>
 </template>
 
@@ -31,9 +51,15 @@ export default {
   data: function() {
     return {
       event: {
+        id: "",
         items: "",
         images: "",
         user_id: ""
+      },
+      items: {
+        id: "",
+        event_id: "",
+        images: "",
       },
       currentUser: ""
     };
@@ -44,6 +70,7 @@ export default {
       this.event = response.data;
       this.currentUser = Number(localStorage.currentUser);
       console.log(this.currentUser);
+      console.log(this.event.items);
     });
     // console.log(this.$route.params.id)
   },

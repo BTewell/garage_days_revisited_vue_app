@@ -1,19 +1,33 @@
 <template>
   <div class="root">
-    <h1>Garage Days Revisited</h1>
-    <div v-for="error in errors">
-      {{ error }}
-    </div>
-
-    <form v-on:submit.prevent="makeItem()">
-      <p>Name: <input type="text" v-model="newItemName"></p>
-      <p>Description: <input type="text" v-model="newItemDescription"></p>
-      <p>Price: <input type="text" v-model="newItemPrice"></p>
-      <p>Event ID: <input type="text" v-model="newItemEventId"></p>
-      <p>User ID: <input type="text" v-model="newItemUserId"></p>
-      <input type="submit" value="Add new item">
-      <!-- <button>Make a new recipe</button> -->
-    </form>
+    <section style="background: url('/img/garage-int-BW.jpg')" class="hero d-flex align-items-center">
+      <div class="container">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item active">Hot Deals</li>
+        </ul>
+        <h1 class="has-lines">Add New <span class="text-primary"> Items</span></h1>
+      </div>
+    </section>
+    <aside class="col-lg-4">                   
+      <div class="widget opening-hours">
+        <header>
+          <h3 class="has-lines"><small> Hot Deals </small> New Item </h3>
+        </header>      
+        <div v-for="error in errors">
+          {{ error }}
+        </div>
+        <form class="days" v-on:submit.prevent="makeItem()">
+          <div class="day d-flex justify-content-between"><strong>Item Name:</strong><input type="text" v-model="newItemName"></div>
+          <div class="day d-flex justify-content-between"><strong>Item Description:</strong><input type="text" v-model="newItemDescription"></div>
+          <div class="day d-flex justify-content-between"><strong>Item Price:</strong><input type="text" v-model="newItemPrice"></div>
+          <input type="hidden" v-model="newItemEventId">
+          <input type="hidden" v-model="newItemUserId">
+          <input type="submit" class="btn btn-primary has-shadow has-wide-padding" value="Add new item">
+          <!-- <button>Make a new recipe</button> -->
+        </form>
+      </div>
+    </aside>
   </div>
 </template>
 
@@ -25,12 +39,14 @@ export default {
       newItemName: "",
       newItemDescription: "",
       newItemPrice: "",
-      newItemEventId: "",
+      newItemEventId: (this.$route.params.id),
       newItemUserId: "",
       errors: []
     };
   },
-  created: function() {},
+  created: function() {
+    console.log(this.$route.params.id);
+  },
   methods: {
     makeItem: function() {
       console.log('making the new item');
