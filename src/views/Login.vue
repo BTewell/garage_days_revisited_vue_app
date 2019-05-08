@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <section style="background: url('/img/garage-int-BW.jpg')" class="listing-single-hero d-flex align-items-center">
+    <section style="background: url('/img/GDR-sale-color.jpg')" class="hero listing-single-hero d-flex align-items-center">
       <div class="container">
         <h1 class="has-lines">User <span class="text-primary"> Login</span></h1>    
       </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <div class="container">
-    <section style="background: url('/img/GDR-login.jpg')no-repeat" class="listing-single-hero d-flex align-items-center">
+    <section style="background: url('/img/GDR-signup.jpg')no-repeat" class="listing-single-hero d-flex align-items-center">
       <div class="container">
         <h1 class="has-lines">Garage Days <span class="text-primary"> Revisited</span></h1>    
       </div>

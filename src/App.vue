@@ -60,7 +60,7 @@
       <div class="container">
         <div class="row">
           <div class="about col-md-4">
-            <div class="logo"><img src="/img/GDR-logo-3_nvrt.jpg" alt="..."></div>
+            <div class="logo"><img src="/img/GDR-logo-3_nvrt-chr.jpg" alt="..."></div>
             <p>Thank you for visiting Garage Days Revisited. We hope you found this app user-friendly and helpful. If so, please give Brett money. Like, all the money. Seriously. </p>
           </div>
           <div class="site-links col-md-4">
